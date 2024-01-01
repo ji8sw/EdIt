@@ -1,0 +1,34 @@
+﻿<Window x:Class="EdIt.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EdIt"
+        mc:Ignorable="d"
+        Title="EdIt" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" x:Name="StackPanel">
+            <Menu x:Name="MenuContainer">
+                <MenuItem Header="_File " x:Name="FileHeader">
+                    <MenuItem Header="_New" Click="NewFile" x:Name="NewFileButton"/>
+                    <MenuItem Header="_Open" Click="OpenFile" x:Name="OpenFileButton"/>
+                    <MenuItem Header="_Save" Click="SaveFile" x:Name="SaveFileButton"/>
+                </MenuItem>
+                <MenuItem Header="_Settings" x:Name="SettingsHeader">
+                    <MenuItem Header="_Text Wrapping" Click="TextWrappingToggle" x:Name="TextWrappingToggleButton"/>
+                    <MenuItem Header="_Spellcheck" Click="SpellcheckToggle" x:Name="SpellcheckToggleButton"/>
+                    <MenuItem Header="_Darkmode" Click="DarkModeToggle" x:Name="DarkModeToggleButton"/>
+                </MenuItem>
+            </Menu>
+
+        </StackPanel>
+
+        <GridSplitter Grid.Row="1" Height="5" HorizontalAlignment="Stretch" VerticalAlignment="Top" ResizeBehavior="PreviousAndNext" x:Name="GridSplitter"/>
+        <TextBox x:Name="TextEditor" Grid.Row="1" AcceptsReturn="True" AcceptsTab="True" TextWrapping="NoWrap"/>
+    </Grid>
+</Window>
